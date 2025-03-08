@@ -20,7 +20,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 CORS_ALLOWED_ORIGINS = [
@@ -32,7 +31,7 @@ STORAGES = {
         "BACKEND" : "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND" : "whitenoise.storage.CompressedStaticFilesStorage",
+        "BACKEND" : "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 
 }
