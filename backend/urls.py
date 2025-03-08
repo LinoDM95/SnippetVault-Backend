@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path
 import backend_vault.views as views
 from rest_framework_simplejwt.views import (
@@ -22,7 +23,11 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+def home(request):
+    return HttpResponse("Willkommen auf der Startseite!")
+
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path("get-snippet/", views.GetSnippet.as_view(), name="get-snippet"),
     path("get-all-snippets/", views.GetAllSnippets.as_view(), name="get-all-snippets"), # without user_id
