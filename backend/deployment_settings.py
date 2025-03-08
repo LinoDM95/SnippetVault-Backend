@@ -1,5 +1,6 @@
 import os 
 import dj_database_url
+from corsheaders.defaults import default_headers
 from .settings import * 
 from .settings import BASE_DIR
 
@@ -24,6 +25,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://snippetvault-frontend.onrender.com'
+]
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'Authorization',
 ]
 
 STORAGES = {
