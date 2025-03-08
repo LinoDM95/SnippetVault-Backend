@@ -23,7 +23,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    'https://render-deploy-tutorial-reactjs-code.onrender.com'
+    'https://snippetvault-frontend.onrender.com'
 ]
 
 STORAGES = {
