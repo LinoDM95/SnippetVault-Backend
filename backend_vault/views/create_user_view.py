@@ -2,11 +2,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from backend_vault.serializers import CreateUserSerializer
+from rest_framework.permissions import AllowAny
 
 class CreateUser(APIView):
   """
   View to create a user
   """
+  permission_classes = [AllowAny]
   def post(self, request):
     serializer = CreateUserSerializer(data=request.data)
     
