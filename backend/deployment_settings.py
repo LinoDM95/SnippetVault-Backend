@@ -26,9 +26,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'https://snippetvault-frontend.onrender.com'
 ]
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'Authorization',
-]
+
 
 STORAGES = {
     "default":{
